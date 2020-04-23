@@ -1,0 +1,254 @@
+% Use only LaTeX2e, calling the article.cls class and 12-point type.
+
+\documentclass[12pt]{article}
+
+% Users of the {thebibliography} environment or BibTeX should use the
+% scicite.sty package, downloadable from *Science* at
+% www.sciencemag.org/about/authors/prep/TeX_help/ .
+% This package should properly format in-text
+% reference calls and reference-list numbers.
+
+%\usepackage{scicite}
+
+% Use times if you have the font installed; otherwise, comment out the
+% following line.
+
+\usepackage{times}
+
+% The preamble here sets up a lot of new/revised commands and
+% environments.  It's annoying, but please do *not* try to strip these
+% out into a separate .sty file (which could lead to the loss of some
+% information when we convert the file to other formats).  Instead, keep
+% them in the preamble of your main LaTeX source file.
+
+
+% The following parameters seem to provide a reasonable page setup.
+
+\topmargin 0.0cm
+\oddsidemargin 0.2cm
+\textwidth 16cm 
+\textheight 21cm
+\footskip 1.0cm
+
+
+%The next command sets up an environment for the abstract to your paper.
+
+\newenvironment{sciabstract}{%
+\begin{quote} \bf}
+{\end{quote}}
+
+
+% If your reference list includes text notes as well as references,
+% include the following line; otherwise, comment it out.
+
+\renewcommand\refname{References and Notes}
+
+% The following lines set up an environment for the last note in the
+% reference list, which commonly includes acknowledgments of funding,
+% help, etc.  It's intended for users of BibTeX or the {thebibliography}
+% environment.  Users who are hand-coding their references at the end
+% using a list environment such as {enumerate} can simply add another
+% item at the end, and it will be numbered automatically.
+
+\newcounter{lastnote}
+\newenvironment{scilastnote}{%
+\setcounter{lastnote}{\value{enumiv}}%
+\addtocounter{lastnote}{+1}%
+\begin{list}%
+{\arabic{lastnote}.}
+{\setlength{\leftmargin}{.22in}}
+{\setlength{\labelsep}{.5em}}}
+{\end{list}}
+
+
+% Include your paper's title here
+
+\title{Imperfect Bifurcation in a non-autonomous nonlinear system describing asymmetric water wheels} 
+
+
+% Place the author information here.  Please hand-code the contact
+% information and notecalls; do *not* use \footnote commands.  Let the
+% author contact information appear immediately below the author names
+% as shown.  We would also prefer that you don't change the type-size
+% settings shown here.
+
+\author
+{Ashish Bhatt,$^{1\ast}$ Rajneesh Kumar,$^{2}$\\
+\\
+\normalsize{$^{1}$Department of Mathematics, Indian Institute of Technology (ISM) Dhanbad,}\\
+%\normalsize{An Unknown Address, Wherever, ST 00000, USA}\\
+\normalsize{$^{2}$Belsar House, East Gandhi Maidan, Jehanabad (India) - 804408}\\
+\\
+\normalsize{$^\ast$ E-mail:  ashishbhatt@iitism.ac.in, rajneeshsharma647@gmail.com
+}
+}
+
+% Include the date command, but leave its argument blank.
+
+\date{}
+
+
+
+%%%%%%%%%%%%%%%%% END OF PREAMBLE %%%%%%%%%%%%%%%%
+
+
+
+\begin{document} 
+
+% Double-space the manuscript.
+
+\baselineskip24pt
+
+% Make the title.
+
+\maketitle 
+
+
+
+% Place your abstract within the special {sciabstract} environment.
+
+
+
+
+% In setting up this template for *Science* papers, we've used both
+% the \section* command and the \paragraph* command for topical
+% divisions.  Which you use will of course depend on the type of paper
+% you're writing.  Review Articles tend to have displayed headings, for
+% which \section* is more appropriate; Research Articles, when they have
+% formal topical divisions at all, tend to signal them with bold text
+% that runs into the paragraph, for which \paragraph* is the right
+% choice.  Either way, use the asterisk (*) modifier, as shown, to
+% suppress numbering.
+
+\section*{Abstract}
+
+We derived a water wheel model from first principles under the assumption of an asymmetric water wheel for which the water inflow rate is in general unsteady (modeled by an arbitrary function of time). In this paper our results suggest that the given equation has an imperfect bifurcation.\\
+$\dot{a_1}=wb_1-ka_1+p_1(t)$\\
+$\dot{b_1}=-wa_1-kb_1+q_1(t)$\\
+$I\dot{w}=-vw+ \pi gRa_1$
+\section*{Keywords}
+Asymmetric water wheel, unsteady water inflow rate, fixed points, linearization of the system, Imperfect bifurcation
+
+
+\section*{Fixed points and linearize the system to figure out bifurcation }
+
+We know that fixed points occur where $\dot{a_1},\dot{b_1},I\dot{w}$ all are zero simultaneously for finding the fixed points.\\
+We have $-vw+ \pi gRa_1=0~~\Rightarrow w= \frac{\pi gRa_1}{v}$\\
+We have $-wa_1-kb_1+q_1(t)=0~~\Rightarrow b_1=\frac{q_1(t)}{k}-\frac{\pi gRa_1^2}{vk}$\\
+Now put the value of $ w$ and $b_1$ in $wb_1-ka_1+p_1(t)=0$, we get\\
+\begin{equation}
+\pi^2 g^2R^2a_1^3+a_1(v^2k^2-\pi gRvq_1(t))-v^2kp_1(t)=0
+\end{equation}\\
+Equation $(1)$ is in cubic polynomial form and we can find the roots by solving the depressed cubic equation of the form $y^3+Ay=B$\\
+We have$ ~~\pi^2 g^2R^2a_1^3+a_1(v^2k^2-\pi gRvq_1(t))-v^2kp_1(t)=0
+$\\
+$ \Rightarrow a_1^3+a_1(\frac{v^2k^2-\pi gRvq_1(t)}{\pi^2 g^2R^2})=\frac{v^2kp_1(t)}{\pi^2 g^2R^2}~~;~~~~${It is in the form of $ y^3+Ay=B$}\\
+These are the following steps involved in solving the depressed cubic. We are left with the solving a depressed cubic equation of the form $y^3+Ay=B$.\\
+We will find s and t so that \\
+\begin{equation}
+3st~~~~~~~~~=~~~~~~A
+\end{equation}
+\begin{equation}
+s^3-t^3~~~~~~=~~~~~B
+\end{equation}
+It turns out that $y=s-t$ will be a solution of the depressed cubic. Let's check that: Replacing A, B and y as indicated transforms our equation into\\
+$ (s-t)^3+3st(s-t)=s^3-t^3$\\
+This is true since we can satisfy the left side by using the binomial formula to \\
+$ (s^3-3s^2t+3st^2-t^3)+(3s^2t-3st^2)=s^3-t^3$\\
+How can we find s and t satisfying $(2)$ and $(3)$? Solving the second equation for s and substituting into $(3)$ yields\\
+$(\frac{A}{3t})^3-t^3=B$\\
+Simplifying, this turns into the "tri-quadratic" equation $t^6+Bt^3-\frac{A^3}{27}=0$;\\
+Which using the substitution $u=t^3$ becomes the quadratic equation$u^2+Bu-\frac{A^3}{27}=0$\\
+From this, we can find a value for u by the quadratic formula, then obtain t, afterwards s and we're done.\\
+\\
+Now, we solve $ a_1^3+a_1(\frac{v^2k^2-\pi gRvq_1(t)}{\pi^2 g^2R^2})=\frac{v^2kp_1(t)}{\pi^2 g^2R^2}$ by depressed cubic method. We will find s and t so that \\
+\begin{equation}
+~~~~~~~~~~3st~~~~~~=~~~~~~~\frac{v^2k^2-\pi gRvq_1(t)}{\pi^2 g^2R^2}
+\end{equation}
+
+\begin{equation}
+s^3-t^3~~~~~~~=~~~~~~~\frac{v^2kp_1(t)}{\pi^2 g^2R^2}
+\end{equation}
+We have ~~$3st~~~=~~\frac{v^2k^2-\pi gRvq_1(t)}{\pi^2 g^2R^2}~~~\Rightarrow s=\frac{v^2k^2-\pi gRvq_1(t)}{3t\pi^2 g^2R^2}$\\
+Now, put the value of s in equation $(5)$, we get:-\\
+$(\frac{v^2k^2-\pi gRvq_1(t)}{3t\pi^2 g^2R^2})^3-t^3=\frac{v^2kp_1(t)}{\pi^2 g^2R^2}$\\
+Let $ \frac{v^2k^2-\pi gRvq_1(t)}{3\pi^2 g^2R^2}=a$,  we get :-\\
+\begin{equation}
+\frac{a^3}{t^3}-t^3=\frac{v^2kp_1(t)}{\pi^2 g^2R^2}
+\end{equation}
+Multiply by $t^3$ in equation $(6)$, we get\\
+$ t^6+\frac{v^2kp_1(t)t^3}{\pi^2 g^2R^2}-a^3=0~~~$;$~~$ Let $t^3=y$, we get \\
+\begin{equation}
+y^2+\frac{v^2kp_1(t)y}{\pi^2 g^2R^2}-a^3=0
+\end{equation}
+Find the roots of equation $(7)$ by using $y=\frac{-b+\sqrt{b^2-4ac}}{2a}$if quadratic equation of the form $ay^2+by+c=0$\\
+\textbf{Note:-}We will discard the negative root.\\
+The root of equation $(7)$ is given by\\
+$y=(-\frac{v^2kp_1(t)}{\pi^2 g^2R^2}+ \sqrt{\frac{v^2k^2p_1^2(t)}{\pi^4 g^4R^4}+4a^3})*\frac{1}{2}$\\
+Let $b=\sqrt{\frac{v^2k^2p_1^2(t)}{\pi^4 g^4R^4}+4a^3}$\\
+We will discard the negative root, then take the cube root to obtain t\\
+$ \Rightarrow t ~~=~~\sqrt[3]{\frac{1}{2}*(\frac{-v^2kp_1(t)}{\pi^2g^2R^2}+b)} $\\
+Now, $ s^3=\frac{v^2kp_1(t)}{\pi^2g^2R^2}+ (\frac{-v^2kp_1(t)}{\pi^2g^2R^2}+b)*\frac{1}{2}$\\
+$ \Rightarrow s^3=\frac{v^2kp_1(t)}{2\pi^2g^2R^2}+\frac{b}{2} \Rightarrow s ~~=~~\sqrt[3]{\frac{1}{2}*(\frac{v^2kp_1(t)}{\pi^2g^2R^2}+b)}$\\
+Our solution $a_1$ for the depressed cubic equation is the difference of s and t i.e.\\
+$\Rightarrow a_1~=\sqrt[3]{\frac{1}{2}*(\frac{v^2kp_1(t)}{\pi^2g^2R^2}+b)}-\sqrt[3]{\frac{1}{2}*(\frac{-v^2kp_1(t)}{\pi^2g^2R^2}+b)}$\\
+After obtaining the value of $a_1$, we get $w$ because $w=\frac{\pi gRa_1}{v}$ and also we obtain $b_1$ because $ b_1=\frac{q_1(t)}{k}-\frac{\pi gRa_1^2}{vk}$\\
+In this way we obtained $a_1$, $w$ and $b_1$ the fixed point of waterwheel equation.\\
+
+\section*{Linearized system}
+Consider the system\\
+$ \dot{x}=f(x,y)$\\
+$ \dot{y}=g(x,y)~~;$ and suppose that $(\bar{x}, \bar{y})$ is a fixed point i.e.
+$ f(\bar{x},\bar{y})=0,~~~ g(\bar{x},\bar{y})=0$\\
+Let $ u=x-\bar{x} ~~and~~ v=y-\bar{y}$ denote the components of a small disturbance from the fixed point.\\
+The linearized system of the above system are as follows :
+
+$\dot{u}=\frac{\delta f}{\delta x}u+\frac{\delta f}{\delta y}v;~~~~~~ and~~$
+$\dot{v}=\frac{\delta g}{\delta x}u+\frac{\delta g}{\delta y}v$\\
+In similar way we linearize our following system i.e.\\
+$\dot{a_1}=wb_1-ka_1+p_1(t)$\\
+$\dot{b_1}=-wa_1-kb_1+q_1(t)$\\
+$I\dot{w}=-vw+ \pi gRa_1$\\
+
+\[
+   M=
+  \left[ {\begin{array}{ccc}
+   -k & w & b_1 \\
+   -w & -k & -a_1 \\
+   \pi gR & 0 & -v
+  \end{array} } \right]
+\]
+Find the determinant value of the above matrix, we get :-\\
+\begin{equation}
+ \triangle~= \pi gR(-wa_1+kb_1)-v(k^2+w^2)
+\end{equation}
+Now putting the value of $w$ and $b_1$ in the equation (8) we get :-\\
+\begin{equation}
+ \Rightarrow \pi gR(\frac{-2\pi gRa_1^2}{v}+q_1)-v(k^2+w^2)
+\end{equation}
+By considering equation $(9)$ we can claim the stability analysis of the above waterwheel equation. Here we have unknown value of $q_1$ and $v$ and based on these value of $q_1$ and $v$, we can say about the stability analysis of the given system.\\
+i.e. If we have $\triangle$ is negative then the fixed point is a saddle point.\\
+\textbf{Note:-}  Consider $ \dot{X}=h+rx-x^3$, if $h=0$ then we have supercritical pitchfork bifurcation.If $h \neq 0$ then imperfect bifurcation come in light.\\
+After converting the waterwheel equation we obtain the form of  $ \dot{X}=h+rx-x^3$. Hence the waterwheel equation has an imperfect bifurcation.
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
